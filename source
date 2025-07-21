@@ -2790,27 +2790,6 @@ reference = (function()
 	main.TopBar.Close.MouseButton1Click:Connect(function()
 		main:TweenPosition(UDim2.new(0.5,-250,0,-500), "InOut", "Quart", 0.5, true, nil)
 	end)
-	local inviteButton = main:FindFirstChild("InviteButton",false)
-	local lastPress = nil
-	inviteButton.MouseButton1Click:Connect(function()
-		if everyClipboard then
-			toClipboard("https://discord.gg/78ZuWSq")
-			inviteButton.Text = "Copied"
-		else
-			inviteButton.Text = "No Clipboard Function, type out the link"
-		end
-		local pressTime = tick()
-		lastPress = pressTime
-		wait(2)
-		if lastPress ~= pressTime then return end
-		inviteButton.Text = "Copy Discord Invite Link (https://discord.gg/78ZuWSq)"
-	end)
-	dragGUI(main)
-	main.Parent = ScaledHolder
-
-	ReferenceButton.MouseButton1Click:Connect(function()
-		main:TweenPosition(UDim2.new(0.5,-250,0.5,-150), "InOut", "Quart", 0.5, true, nil)
-	end)
 end)()
 
 currentShade1 = Color3.fromRGB(36, 36, 37)
